@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Quality Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="emoji">🎯</span>
+                    Prompt Quality Checker
+                </h1>
+                <p class="subtitle">Get an instant grade on your AI prompts and learn how to improve them</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="input-section">
+                <label for="prompt-input" class="input-label">
+                    Enter your AI prompt below
+                </label>
+                <textarea 
+                    id="prompt-input" 
+                    class="prompt-textarea"
+                    placeholder="Example: Write about dogs..."
+                    rows="6"
+                ></textarea>
+                
+                <button id="check-prompt" class="check-button">
+                    <span class="button-text">Check My Prompt</span>
+                    <span class="button-icon">⚡</span>
+                </button>
+            </div>
+
+            <div id="results-section" class="results-section hidden">
+                <div class="grade-display">
+                    <div class="grade-circle">
+                        <span id="grade-letter" class="grade-letter">A</span>
+                    </div>
+                    <div class="grade-info">
+                        <h3 id="grade-title" class="grade-title">Excellent Prompt!</h3>
+                        <p id="grade-description" class="grade-description">Your prompt follows best practices</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="criterion-card">
+                        <div class="criterion-header">
+                            <span class="criterion-icon">🎯</span>
+                            <h4>Specificity & Detail</h4>
+                        </div>
+                        <div class="criterion-score">
+                            <div class="score-bar">
+                                <div id="specificity-bar" class="score-fill"></div>
+                            </div>
+                            <span id="specificity-score" class="score-number">85%</span>
+                        </div>
+                        <p id="specificity-feedback" class="criterion-feedback">Good level of detail provided</p>
+                    </div>
+
+                    <div class="criterion-card">
+                        <div class="criterion-header">
+                            <span class="criterion-icon">📝</span>
+                            <h4>Clear Structure</h4>
+                        </div>
+                        <div class="criterion-score">
+                            <div class="score-bar">
+                                <div id="structure-bar" class="score-fill"></div>
+                            </div>
+                            <span id="structure-score" class="score-number">75%</span>
+                        </div>
+                        <p id="structure-feedback" class="criterion-feedback">Well-organized request</p>
+                    </div>
+
+                    <div class="criterion-card">
+                        <div class="criterion-header">
+                            <span class="criterion-icon">🎭</span>
+                            <h4>Context & Examples</h4>
+                        </div>
+                        <div class="criterion-score">
+                            <div class="score-bar">
+                                <div id="context-bar" class="score-fill"></div>
+                            </div>
+                            <span id="context-score" class="score-number">65%</span>
+                        </div>
+                        <p id="context-feedback" class="criterion-feedback">Could benefit from more context</p>
+                    </div>
+
+                    <div class="criterion-card">
+                        <div class="criterion-header">
+                            <span class="criterion-icon">🚀</span>
+                            <h4>Actionability</h4>
+                        </div>
+                        <div class="criterion-score">
+                            <div class="score-bar">
+                                <div id="actionability-bar" class="score-fill"></div>
+                            </div>
+                            <span id="actionability-score" class="score-number">80%</span>
+                        </div>
+                        <p id="actionability-feedback" class="criterion-feedback">Clear action requested</p>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h3 class="suggestions-title">💡 Improvement Suggestions</h3>
+                    <ul id="suggestions-list" class="suggestions-list">
+                        <li>Add specific word count or length requirements</li>
+                        <li>Include your target audience information</li>
+                        <li>Provide an example of the desired output format</li>
+                    </ul>
+                </div>
+
+                <div class="example-section">
+                    <h3 class="example-title">✨ Improved Version</h3>
+                    <div id="improved-prompt" class="improved-prompt">
+                        Your improved prompt will appear here...
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="loading" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p>Analyzing your prompt...</p>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
