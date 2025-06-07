@@ -34,6 +34,7 @@ class PromptChecker {
         } catch (error) {
             console.error('Analysis error:', error);
             alert('Sorry, there was an error analyzing your prompt. Please try again.');
+        } finally {
             this.hideLoading();
         }
     }
@@ -134,8 +135,7 @@ Respond with JSON in this exact format:
         // Update improved prompt
         document.getElementById('improved-prompt').textContent = analysis.improvedPrompt;
 
-        // Hide loading and show results with animation
-        this.hideLoading();
+        // Show results with animation
         this.resultsSection.classList.remove('hidden');
         this.resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -170,3 +170,4 @@ Respond with JSON in this exact format:
 document.addEventListener('DOMContentLoaded', () => {
     new PromptChecker();
 });
+
